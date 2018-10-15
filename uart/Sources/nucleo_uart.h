@@ -1,0 +1,41 @@
+#ifndef __NUCLEO_UART_H
+#define __NUCLEO_UART_H
+
+#include "main.h"
+
+#define DEBUG_UART						USART2
+#define DEBUG_UART_RCC					RCC_APB1Periph_USART2
+#define DEBUG_UART_RCC_CMD				RCC_APB1PeriphClockCmd
+#define DEBUG_UART_GPIO					GPIOA
+#define DEBUG_UART_GPIO_RCC				RCC_AHBPeriph_GPIOA
+#define DEBUG_UART_TX					GPIO_Pin_2
+#define DEBUG_UART_TX_PINSOURCE			GPIO_PinSource2
+#define DEBUG_UART_RX					GPIO_Pin_3
+#define DEBUG_UART_RX_PINSOURCE			GPIO_PinSource3
+#define DEBUG_UART_BAUDRATE				115200
+#define DEBUG_UART_IRQ					USART2_IRQn
+#define DEBUG_UART_IRQ_HANDLER			USART2_IRQHandler
+
+#define DEBUG_UART_TX_TIM				TIM3
+#define DEBUG_UART_TX_TIM_RCC			RCC_APB1Periph_TIM3
+#define DEBUG_UART_TX_TIM_RCC_CMD		RCC_APB1PeriphClockCmd
+#define DEBUG_UART_TX_TIM_PSC			36000-1
+#define DEBUG_UART_TX_TIM_PERIOD		3000-1
+#define DEBUG_UART_TX_TIM_IRQ			TIM3_IRQn
+#define DEBUG_UART_TX_TIM_IRQ_HANDLER	TIM3_IRQHandler
+
+#define PUSHBUTTON_GPIO					GPIOC
+#define PUSHBUTTON_RCC					RCC_AHBPeriph_GPIOC
+#define PUSHBUTTON_PIN					GPIO_Pin_13
+#define PUSHBUTTON_EXTI_LINE			EXTI_Line13
+#define PUSHBUTTON_IRQ					EXTI15_10_IRQn
+#define PUSHBUTTON_IRQ_HANDLER			EXTI15_10_IRQHandler
+#define PUSHBUTTON_EXTI_PORTSOURCE		EXTI_PortSourceGPIOC
+#define PUSHBUTTON_EXTI_PINSOURCE		EXTI_PinSource13
+
+#define SYSCFG_RCC						RCC_APB2Periph_SYSCFG
+#define SYSCFG_RCC_CMD					RCC_APB2PeriphClockCmd
+
+void nucleo_uart_config(void);
+
+#endif
